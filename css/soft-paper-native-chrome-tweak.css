@@ -1,0 +1,126 @@
+/*==============================================================================
+  Soft Paper — An Obsidian Theme 
+  by Nick Milo
+  License: GPL-3.0
+
+  Native Chrome v2.0 — CSS Stylesheet
+  by Ram Solanki | jun6lee
+  ------------------------------------------------------------------------------
+  Purpose
+  -------
+  - Restores Obsidian's native application chrome while retaining the Soft Paper
+  editor aesthetic.
+  - Temporary fix for https://github.com/nickmilo/soft-paper/issues/8
+
+  Changes
+  -------
+  ✓ Uses Obsidian's native title bar colours
+  ✓ Uses native sidebar and tab backgrounds
+  ✓ Restores default icon colouring
+  ✓ Restores vault profile colours
+  ✓ Supports both Dark and Light appearance automatically
+
+  Version
+  -------
+  v2.0
+
+==============================================================================*/
+
+
+/*==============================================================================
+  Scope
+==============================================================================*/
+
+:is(.theme-dark, .theme-light) {
+
+    /* Native window chrome */
+    --titlebar-background: var(--background-secondary);
+    --titlebar-background-focused: var(--background-secondary);
+    --colorful-frame-color: var(--background-secondary);
+
+    /* Cards and miscellaneous chrome */
+    --card-background-color: var(--background-secondary);
+}
+
+
+/*==============================================================================
+  Restore Obsidian icon colours
+==============================================================================*/
+
+:is(.theme-dark, .theme-light)
+.mod-left-split .workspace-tab-header-container .clickable-icon,
+:is(.theme-dark, .theme-light)
+.mod-right-split .workspace-tab-header-container .clickable-icon,
+:is(.theme-dark, .theme-light)
+.mod-left-split .workspace-tab-header .workspace-tab-header-inner-icon,
+:is(.theme-dark, .theme-light)
+.mod-right-split .workspace-tab-header .workspace-tab-header-inner-icon,
+:is(.theme-dark, .theme-light)
+.is-focused .mod-left-split .mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-icon,
+:is(.theme-dark, .theme-light)
+.is-focused .mod-left-split .mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-title,
+:is(.theme-dark, .theme-light)
+.is-focused .mod-right-split .mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-icon,
+:is(.theme-dark, .theme-light)
+.is-focused .mod-right-split .mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-title,
+:is(.theme-dark, .theme-light)
+.titlebar-button-container .titlebar-button,
+:is(.theme-dark, .theme-light)
+.titlebar-button-container .clickable-icon,
+:is(.theme-dark, .theme-light)
+.mod-top-right-space .clickable-icon,
+:is(.theme-dark, .theme-light)
+.workspace-sidedock-vault-profile .clickable-icon,
+:is(.theme-dark, .theme-light)
+.mod-root .workspace-tab-header-tab-list .clickable-icon,
+:is(.theme-dark, .theme-light)
+.mod-root .workspace-tab-header-new-tab .clickable-icon {
+
+    color: unset !important;
+
+    --icon-color: unset !important;
+    --icon-color-hover: unset !important;
+    --icon-color-focused: unset !important;
+}
+
+
+/*==============================================================================
+  Native sidebar and tab backgrounds
+==============================================================================*/
+
+:is(.theme-dark, .theme-light)
+.mod-left-split .workspace-tab-header-container,
+:is(.theme-dark, .theme-light)
+.mod-right-split .workspace-tab-header-container,
+:is(.theme-dark, .theme-light)
+.mod-root .workspace-tab-header-container,
+:is(.theme-dark, .theme-light)
+.mod-root .workspace-tabs.mod-top,
+:is(.theme-dark, .theme-light)
+.mod-left-split .workspace-tab-container,
+:is(.theme-dark, .theme-light)
+.mod-right-split .workspace-tab-container {
+
+    background-color: var(--background-secondary) !important;
+}
+
+
+/*==============================================================================
+  Native vault profile
+==============================================================================*/
+
+:is(.theme-dark, .theme-light)
+.workspace-drawer-vault,
+:is(.theme-dark, .theme-light)
+.workspace-sidedock-vault-profile {
+
+    background-color: var(--background-secondary) !important;
+    color: var(--text-normal) !important;
+}
+
+:is(.theme-dark, .theme-light)
+.workspace-sidedock-vault-profile * {
+
+    color: var(--text-normal) !important;
+}
+
